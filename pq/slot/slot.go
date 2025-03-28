@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/Trendyol/go-pq-cdc/internal/metric"
-	"github.com/Trendyol/go-pq-cdc/logger"
-	"github.com/Trendyol/go-pq-cdc/pq"
+	"github.com/BishopCodes/go-pq-cdc/internal/metric"
+	"github.com/BishopCodes/go-pq-cdc/logger"
+	"github.com/BishopCodes/go-pq-cdc/pq"
 	"github.com/go-playground/errors"
 	"github.com/jackc/pgx/v5/pgconn"
 	"github.com/jackc/pgx/v5/pgtype"
