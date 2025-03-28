@@ -10,7 +10,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/BishopCodes/go-pq-cdc/pq/timescaledb"
+	// "github.com/BishopCodes/go-pq-cdc/pq/timescaledb"
 
 	"github.com/BishopCodes/go-pq-cdc/config"
 	"github.com/BishopCodes/go-pq-cdc/internal/http"
@@ -40,8 +40,8 @@ type connector struct {
 	slot               *slot.Slot
 	cancelCh           chan os.Signal
 	readyCh            chan struct{}
-	timescaleDB        *timescaledb.TimescaleDB
-	system             pq.IdentifySystemResult
+	// timescaleDB        *timescaledb.TimescaleDB
+	system pq.IdentifySystemResult
 
 	once sync.Once
 }
@@ -112,15 +112,15 @@ func NewConnector(ctx context.Context, cfg config.Config, listenerFunc replicati
 
 	prometheusRegistry := metric.NewRegistry(m)
 
-	tdb, err := timescaledb.NewTimescaleDB(ctx, cfg.DSN())
-	if err != nil {
-		return nil, err
-	}
+	// tdb, err := timescaledb.NewTimescaleDB(ctx, cfg.DSN())
+	// if err != nil {
+	// return nil, err
+	// }
 
-	_, err = tdb.FindHyperTables(ctx)
-	if err != nil {
-		return nil, err
-	}
+	// _, err = tdb.FindHyperTables(ctx)
+	// if err != nil {
+	// return nil, err
+	// }
 
 	return &connector{
 		cfg:                &cfg,
@@ -129,7 +129,7 @@ func NewConnector(ctx context.Context, cfg config.Config, listenerFunc replicati
 		prometheusRegistry: prometheusRegistry,
 		server:             http.NewServer(cfg, prometheusRegistry),
 		slot:               sl,
-		timescaleDB:        tdb,
+		// timescaleDB:        tdb,
 
 		cancelCh: make(chan os.Signal, 1),
 		readyCh:  make(chan struct{}, 1),
@@ -156,7 +156,7 @@ func (c *connector) Start(ctx context.Context) {
 
 	logger.Info("slot captured")
 	go c.slot.Metrics(ctx)
-	go c.timescaleDB.SyncHyperTables(ctx)
+	// go c.timescaleDB.SyncHyperTables(ctx)
 
 	signal.Notify(c.cancelCh, syscall.SIGTERM, syscall.SIGINT, syscall.SIGABRT, syscall.SIGQUIT)
 
@@ -184,7 +184,7 @@ func (c *connector) Close() {
 	}
 
 	c.slot.Close()
-	c.stream.Close(context.TODO())
+	// c.stream.Close(context.TODO())
 	c.server.Shutdown()
 }
 
