@@ -1,11 +1,11 @@
-module github.com/Trendyol/go-pq-cdc/integration
+module github.com/BishopCodes/go-pq-cdc/integration
 
 go 1.22.4
 
-replace github.com/Trendyol/go-pq-cdc => ../
+replace github.com/BishopCodes/go-pq-cdc => ../
 
 require (
-	github.com/Trendyol/go-pq-cdc v0.0.0-00010101000000-000000000000
+	github.com/BishopCodes/go-pq-cdc v0.0.0-00010101000000-000000000000
 	github.com/go-playground/errors v3.3.0+incompatible
 	github.com/golang-migrate/migrate/v4 v4.17.1
 	github.com/jackc/pgx/v5 v5.6.0

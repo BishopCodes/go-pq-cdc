@@ -42,7 +42,7 @@ jobs:
         run: go test -v ./...
 
   security-gates:
-    uses: Trendyol/security-actions/.github/workflows/security-gates.yml@master
+    uses: BishopCodes/security-actions/.github/workflows/security-gates.yml@master
     needs: build
     permissions:
       actions: read

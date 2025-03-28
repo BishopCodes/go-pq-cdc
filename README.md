@@ -1,4 +1,4 @@
-# go-pq-cdc [![Go Reference](https://pkg.go.dev/badge/github.com/Trendyol/go-dcp.svg)](https://pkg.go.dev/github.com/Trendyol/go-pq-cdc) [![Go Report Card](https://goreportcard.com/badge/github.com/Trendyol/go-pq-cdc)](https://goreportcard.com/report/github.com/Trendyol/go-pq-cdc)
+# go-pq-cdc [![Go Reference](https://pkg.go.dev/badge/github.com/BishopCodes/go-dcp.svg)](https://pkg.go.dev/github.com/BishopCodes/go-pq-cdc) [![Go Report Card](https://goreportcard.com/badge/github.com/BishopCodes/go-pq-cdc)](https://goreportcard.com/report/github.com/BishopCodes/go-pq-cdc)
 
 go-pq-cdc is designed to provide efficient and lightweight Change Data Capture (CDC) for PostgreSQL databases.
 The architecture leverages PostgreSQL's built-in logical replication capabilities to capture changes in the database and
@@ -24,13 +24,13 @@ ensuring low resource consumption and high performance.
 CDC systems are crucial for real-time data synchronization, analytics, and event-driven architectures.
 Our main goal is to build a cdc base library for faster and stateful systems.
 
-- [Postgresql to Elasticsearch Connector](https://github.com/Trendyol/go-pq-cdc-elasticsearch)
-- [Postgresql to Kafka Connector](https://github.com/Trendyol/go-pq-cdc-kafka)
+- [Postgresql to Elasticsearch Connector](https://github.com/BishopCodes/go-pq-cdc-elasticsearch)
+- [Postgresql to Kafka Connector](https://github.com/BishopCodes/go-pq-cdc-kafka)
 
 ### Usage
 
 ```sh
-go get github.com/Trendyol/go-pq-cdc
+go get github.com/BishopCodes/go-pq-cdc
 ```
 
 ```go
@@ -38,12 +38,12 @@ package main
 
 import (
 	"context"
-	cdc "github.com/Trendyol/go-pq-cdc"
-	"github.com/Trendyol/go-pq-cdc/config"
-	"github.com/Trendyol/go-pq-cdc/pq/message/format"
-	"github.com/Trendyol/go-pq-cdc/pq/publication"
-	"github.com/Trendyol/go-pq-cdc/pq/replication"
-	"github.com/Trendyol/go-pq-cdc/pq/slot"
+	cdc "github.com/BishopCodes/go-pq-cdc"
+	"github.com/BishopCodes/go-pq-cdc/config"
+	"github.com/BishopCodes/go-pq-cdc/pq/message/format"
+	"github.com/BishopCodes/go-pq-cdc/pq/publication"
+	"github.com/BishopCodes/go-pq-cdc/pq/replication"
+	"github.com/BishopCodes/go-pq-cdc/pq/slot"
 	"log/slog"
 	"os"
 )
@@ -114,8 +114,8 @@ func Handler(ctx *replication.ListenerContext) {
 
 * [Simple](./example/simple)
 * [Simple File Config](./example/simple-file-config)
-* [PostgreSQL to Elasticsearch](https://github.com/Trendyol/go-pq-cdc-elasticsearch/tree/main/example/simple)
-* [PostgreSQL to Kafka](https://github.com/Trendyol/go-pq-cdc-kafka/tree/main/example/simple)
+* [PostgreSQL to Elasticsearch](https://github.com/BishopCodes/go-pq-cdc-elasticsearch/tree/main/example/simple)
+* [PostgreSQL to Kafka](https://github.com/BishopCodes/go-pq-cdc-kafka/tree/main/example/simple)
 * [PostgreSQL to PostgreSQL](./example/postgresql)
 
 ### Availability

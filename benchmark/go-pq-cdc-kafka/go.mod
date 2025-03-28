@@ -1,12 +1,12 @@
-module github.com/Trendyol/go-pq-cdc/benchmark/go-pq-cdc-kafka
+module github.com/BishopCodes/go-pq-cdc/benchmark/go-pq-cdc-kafka
 
 go 1.22.4
 
-replace github.com/Trendyol/go-pq-cdc => ../../
+replace github.com/BishopCodes/go-pq-cdc => ../../
 
 require (
-	github.com/Trendyol/go-pq-cdc v0.0.5
-	github.com/Trendyol/go-pq-cdc-kafka v0.0.1
+	github.com/BishopCodes/go-pq-cdc v0.0.5
+	github.com/BishopCodes/go-pq-cdc-kafka v0.0.1
 	github.com/segmentio/kafka-go v0.4.47
 )
 
